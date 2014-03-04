@@ -1,0 +1,36 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int isFibo(int quantity, int number);
+
+int main() {
+    int args, nums;
+    cin>>args;
+    for(int i=0; i<args; i++){
+        cin>>nums;
+        int count = isFibo(args, nums);
+        if(count==args) return 0;
+    }
+    return 0;
+}
+
+int isFibo(int quantity, int number) {
+    int curFib, count, a = 0;
+    int b = 1;
+    while(curFib<=number){
+        curFib = a+b;
+        a=b;
+        b=curFib;
+        if(number==curFib){
+            count++;
+            cout<<"IsFib\n";
+            return count;
+        }
+    }
+    cout<<"IsNotFib\n";
+    return count;
+}
