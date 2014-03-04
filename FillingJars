@@ -1,0 +1,24 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int addCandy(int st, int en, int number);
+
+int main() {
+    int N,M,a,b,k, total = 0;
+    cin>>N>>M;
+    for(int i=0; i<M; i++){
+        cin>>a>>b>>k;
+        total += addCandy(a,b,k);
+    }
+    cout<<total/N;
+    return 0;
+}
+
+int addCandy(int st, int en, int number) {
+    int added = (en-st+1)*number;
+    return added;
+}
